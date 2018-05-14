@@ -24,7 +24,6 @@ package main
 import(
   "fmt"
   "os"
-  "strings"
 )
 
 func main(){
@@ -44,5 +43,8 @@ func main(){
   // fmt.Println(s)
 
   //Version 3:
-  fmt.Println(strings.Join(os.Args[1:]," "))
+  //fmt.Println(strings.Join(os.Args[1:]," "))
+
+  //Version 4 : Most efficient for slices. Adds extra parentheses.
+  fmt.Println(os.Args[1:])
 }
