@@ -24,6 +24,7 @@ package main
 import(
   "fmt"
   "os"
+  "strings"
 )
 
 func main(){
@@ -36,9 +37,12 @@ func main(){
   // fmt.Println(s)
 
   // Version 2:
-  s,sep := ""," "
-  for _, arg := range  os.Args[1:]{
-    s+= sep + arg;
-  }
-  fmt.Println(s)
+  // s,sep := ""," "
+  // for _, arg := range  os.Args[1:]{
+  //   s+= sep + arg;
+  // }
+  // fmt.Println(s)
+
+  //Version 3:
+  fmt.Println(strings.Join(os.Args[1:]," "))
 }
