@@ -24,6 +24,7 @@ package main
 import(
   "fmt"
   "os"
+  "strconv"
 )
 
 func main(){
@@ -46,5 +47,12 @@ func main(){
   //fmt.Println(strings.Join(os.Args[1:]," "))
 
   //Version 4 : Most efficient for slices. Adds extra parentheses.
-  fmt.Println(os.Args[1:])
+  //fmt.Println(os.Args[1:])
+
+  // Version 5 : Args and index printer
+  s,sep,term := "", " -> ","\n"
+  for index,arg := range os.Args[0:]{
+    s+= strconv.Itoa(index) + sep + arg + term;
+  }
+  fmt.Println(s)
 }
