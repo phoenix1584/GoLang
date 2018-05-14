@@ -27,10 +27,18 @@ import(
 )
 
 func main(){
-  var s, sep string
-  sep = " "
-  for i := 0 ; i < len(os.Args) ; i++{
-    s += sep  + os.Args[i]
+  // Version 1 :
+  // var s, sep string
+  // sep = " "
+  // for i := 0 ; i < len(os.Args) ; i++{
+  //   s += sep  + os.Args[i]
+  // }
+  // fmt.Println(s)
+
+  // Version 2:
+  s,sep := ""," "
+  for _, arg := range  os.Args[1:]{
+    s+= sep + arg;
   }
   fmt.Println(s)
 }
